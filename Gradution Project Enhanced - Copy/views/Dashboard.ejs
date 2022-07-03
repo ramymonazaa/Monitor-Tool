@@ -1,0 +1,397 @@
+<%- include('header') -%>
+
+    <!DOCTYPE html>
+    <html>
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+    <style>
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        input[type=text]:focus {
+            width: 100%;
+        }
+        
+        body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+        
+        .dark-mode {
+            background-color: black;
+            color: rgb(0, 0, 0);
+        }
+        
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            left: 0px;
+        }
+        
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+        
+        .sidebar a.active {
+            background-color: #151320;
+            color: white;
+        }
+        
+        .sidebar a:hover:not(.active) {
+            background-color: rgb(151, 9, 9);
+            color: white;
+        }
+        
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+        
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar a {
+                float: left;
+            }
+            div.content {
+                margin-left: 0;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+    </style>
+
+    <head>
+        <title>Responsive Grid Cards</title>
+        <!--Google Font-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <!--Stylesheet-->
+        <link rel="stylesheet" href="assets/styles.css">
+    </head>
+
+    <body>
+
+
+        <div class="sidebar">
+            <a class="active" href="#">Dashboard</a>
+            <a href="/">Home</a>
+            <a class="nav-link" href="#" onClick=" myFunction()">Dark Mode</a>
+            <a href="/about">About</a>
+
+
+
+
+        </div>
+        <div class="cards">
+            <div class="card card1">
+
+                <div class="container">
+
+                    <a href="/host">
+                        <img alt="Qries" src="assets/devices.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Hosts and Devices</h3>
+                    <p>Check for spacific hosts and devices(using thier ip's the status</p>
+                    <a href="/host" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card2">
+
+                <div class="container">
+
+                    <a href="/interface">
+                        <img alt="Qries" src="assets/images (1).png">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Network Interface</h3>
+                    <p>Show current active network interfaces and thier details</p>
+                    <a href="/interface" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card3">
+
+                <div class="container">
+
+                    <a href="/draw">
+                        <img alt="Qries" src="assets/images.png">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Draw graphically</h3>
+                    <p>If you wnat to make primary design or drow somthing or save a note</p>
+                    <a href="/draw" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card4">
+
+                <div class="container">
+
+                    <a href="/host">
+                        <img alt="Qries" src="assets/snmp.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>SNMP</h3>
+                    <p>Show netowrk information by thier OIDS using simple network management protocol</p>
+                    <a href="/host" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card5">
+
+                <div class="container">
+
+                    <a href="/sp">
+                        <img alt="Qries" src="assets/share-logo.png">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Speed tester</h3>
+                    <p>Measure server graphically Download and Upload speed</p>
+                    <a href="/sp" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card6">
+
+                <div class="container">
+
+                    <a href="/errors">
+                        <img alt="Qries" src="assets/Improve-Your-Site-SEO-By-Eliminating-5xx-Errors.png">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Error Detect</h3>
+                    <p>Detect some network problems using SNMP</p>
+                    <a href="/errors" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card3">
+
+                <div class="container">
+
+                    <a href="/ipconfig">
+                        <img alt="Qries" src="assets/Improve-Your-Site-SEO-By-Eliminating-5xx-Errors copy.png">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>IPconfig</h3>
+                    <p>Check server IP, MAC, and gitway</p>
+                    <a href="/ipconfig" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card7">
+
+                <div class="container">
+
+                    <a href="/host">
+                        <img alt="Qries" src="assets/Backup-three-laptops-plugged-into-word.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Backup</h3>
+                    <p>Latest used or stored data</p>
+                    <a href="/speeds" class="btn btn-primary">Speed </a> &nbsp;&nbsp;&nbsp;
+
+                    <a href="/interface" class="btn btn-warning">Interface </a> &nbsp;&nbsp;&nbsp;
+                    <a href="/ipconfig" class="btn btn-danger">ipConfig </a> &nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+            <div class="card card4">
+
+                <div class="container">
+
+                    <a href="/cp">
+                        <img alt="Qries" src="assets/Performance.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Performance</h3>
+                    <p>Show graphically system performance</p>
+                    <a href="/cp" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card4">
+
+                <div class="container">
+
+                    <a href="/host">
+                        <img alt="Qries" src="assets/hqdefault.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Track ip Location</h3>
+                    <p>Information about my IP address</p>
+                    <a href="/nodejs" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card2">
+
+                <div class="container">
+
+                    <a href="/js">
+                        <img alt="Qries" src="assets/Systeminformation.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Systeminformation</h3>
+                    <p>Show details of operating system</p>
+                    <a href="/js" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card1">
+
+                <div class="container">
+
+                    <a href="/trace">
+                        <img alt="Qries" src="assets/devices.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>trace packet </h3>
+                    <p>Trace packets that being send or reicieved to the server and information about them</p>
+                    <a href="/trace" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card1">
+
+                <div class="container">
+
+                    <a href="/active">
+                        <img alt="Qries" src="assets/Capture.JPG">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Active Connected Devices </h3>
+                    <p>Show all Devices connected to my network</p>
+                    <a href="/active" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card1">
+
+                <div class="container">
+
+                    <a href="/boadcast">
+                        <img alt="Qries" src="assets/pngtree-broadcast-icon-in-trendy-style-isolated-background-png-image_1537700.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>boadcast </h3>
+                    <p>Count the number of different broadcast packets</p>
+                    <a href="/boadcast" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card1">
+
+                <div class="container">
+
+                    <a href="/graphic">
+                        <img alt="Qries" src="assets/maxresdefault.jpg">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Network datagram </h3>
+                    <p>Design youer network</p>
+                    <a href="/graphic" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+            <div class="card card9">
+
+                <div class="container">
+
+                    <a href="/real">
+                        <img alt="Qries" src="assets/Captur1.JPG">
+                    </a>
+
+
+                </div>
+                <div class="details">
+
+                    <h3>Get real ip </h3>
+                    <p>Git youer real IP not one taken by DNS</p>
+                    <a href="/real" class="btn btn-primary">Press here </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>

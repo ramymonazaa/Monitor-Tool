@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="xgqfrms">
+    <meta name="generator" content="VS code">
+    <title>CPU Memory</title>
+    <style>
+        [data-box="contanier"] {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>CPU Memory</h1>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js " integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin=" anonymous "></script>
+        <!-- <script src="./libs/js/Chart.bundle.min.js"></script> -->
+        <section>
+            <div data-box="contanier">
+                <canvas id="myChart" width="300" height="200"></canvas>
+            </div>
+            <script>
+                let data = [12];
+                // let data = [12, 19, 3, 5, 2, 3, 12, 9, 3, 15];
+                let labels = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+                const RepeatArrayGenerator = (datas = [], num = 1, debug = false) => {
+                    let result = ``;
+                    // do something...
+                    let str = `${datas.toString()},`;
+                    str = str.repeat(num);
+                    str = str.slice(0, str.length - 1);
+                    result = str.split(`,`);
+                    result = result.map(item => {
+                        let newItem = "";
+                        newItem = (item.trim() !== "") ? parseFloat(item) : "";
+                        return newItem;
+                    });
+                    if (debug) {
+                        console.log(`result =\n`, result);
+                    }
+                    return result;
+                };
+                // data = RepeatArrayGenerator(data, 6);
+                labels = RepeatArrayGenerator(labels, 1);
+                console.log(`labels =`, labels);
+                // data = data.concat(data);
+                // labels = labels.concat(labels);
+                // let data = [12, 19, 3, 5, 2, 3, 12, 9, 3, 15];
+                // let labels = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+                var ctx = document.getElementById("myChart").getContext("2d");
+                // Global point options
+                Chart.defaults.global.elements.point.pointStyle = "circle";
+                // Chart.defaults.global.elements.point.pointStyle = "line";
+                Chart.defaults.global.elements.point.radius = 0;
+                var myChart = new Chart(ctx, {
+                    // type: "bar ",
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "CPU Performance",
+                            data: data,
+                            backgroundColor: [
+                                "rgba(255, 99, 132, 0.2)",
+                                "rgba(54, 162, 235, 0.2)",
+                                "rgba(255, 206, 86, 0.2)",
+                                "rgba(75, 192, 192, 0.2)",
+                                "rgba(153, 102, 255, 0.2)",
+                                "rgba(255, 159, 64, 0.2)"
+                            ],
+                            borderColor: [
+                                "rgba(255,99,132,1)",
+                                "rgba(54, 162, 235, 1)",
+                                "rgba(255, 206, 86, 1)",
+                                "rgba(75, 192, 192, 1)",
+                                "rgba(153, 102, 255, 1)",
+                                "rgba(255, 159, 64, 1)"
+                            ],
+                            borderWidth: 1,
+                            fill: "start",
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        },
+                        elements: {
+                            line: {
+                                tension: 0,
+                                // no smooth
+                            }
+                        }
+                    }
+                });
+                // update
+                let datas = [12, 19, 3, 5, 2, 3, 12, 9, 3, 15];
+                datas = RepeatArrayGenerator(datas, 10);
+                for (let i = 0; i < datas.length; i++) {
+                    setTimeout(() => {
+                        if (data.length > 9) {
+                            data.push(datas[i]);
+                            // console.log(`data =\n`, data);
+                            let newData = datas[i],
+                                oldData = [];
+                            oldData = data.slice(data.length - 9, data.length);
+                            oldData.push(newData);
+                            data = oldData;
+                            // console.log(`oldData =`, oldData);
+                            myChart.data.datasets[0].data = data;
+                            myChart.update(0);
+                        } else {
+                            data.push(datas[i]);
+                            myChart.data.datasets[0].data = data;
+                            myChart.update(0);
+                        }
+                    }, i * 1000);
+                }
+                // let flag = setInterval(() => {
+                //     let newData = data[0],
+                //         oldData = data.slice(1);
+                //     oldData.push(newData)
+                //     data = [].concat(oldData);
+                //     myChart.data.datasets[0].data = data;
+                //     myChart.update(0);
+                //     // disable animation
+                // }, 1000);
+            </script>
+        </section>
+    </section>
+</body>
+
+</html>

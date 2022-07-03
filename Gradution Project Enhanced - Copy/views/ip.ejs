@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>What is my ip</title>
+</head>
+<style>
+       	.btn{
+   	    border: none;
+   	    padding: 9px 13px;
+   	    color: white;
+        background-color: red;
+   	    border-radius: 3px;
+   	}
+    .btn:active{
+    	background-color: grey;
+    }
+    .card{
+        border: 3px;
+        border-color: black;
+        margin: auto;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 20px;
+    }
+    .card-header{
+        border: 3px;
+       
+    }
+    .slider-area h2 {
+	text-align: center;
+	font-family: impact;
+	font-size: 60px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 100px 0 30px 0;
+	color: #fff;
+}
+    
+</style>
+<body>
+    <div class="card">
+        <div class="card-header shadow-lg p-3 mb-5 bg-white rounded">
+          <h2>Get real ip </h2>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title"></h2>
+          <p id="ip"></p>
+          <button id="btn" class="btn" onclick="find();">Find</button>          
+        </div>
+      </div>
+    
+   
+    <script >
+        url='https://api.ipify.org/?format=json';
+var ip =document.getElementById("ip");
+function find(){
+
+    fetch(url).then(res=> res.json().then(result=> {
+        ip.innerText =result.ip;
+    }))
+}
+   
+    </script>
+
+</body>
+</html>

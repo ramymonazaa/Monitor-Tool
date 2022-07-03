@@ -1,0 +1,49 @@
+{
+  "name": "cmdu",
+  "version": "2.0.12",
+  "description": "A comfortable way to create your command line app with nodejs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test --recursive",
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "reporter": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report html -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Spikef/cmdu.git"
+  },
+  "files": [
+    "language/",
+    "lib/",
+    "index.js",
+    "README.md",
+    "README_CN.md"
+  ],
+  "keywords": [
+    "command",
+    "cli"
+  ],
+  "author": {
+    "name": "Spikef"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Spikef/cmdu/issues"
+  },
+  "homepage": "https://github.com/Spikef/cmdu#readme",
+  "engines": {
+    "node": ">= 4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "sinon": "^4.0.1"
+  },
+  "dependencies": {
+    "abbrev": "^1.1.1",
+    "cubb": "^1.0.5"
+  }
+}

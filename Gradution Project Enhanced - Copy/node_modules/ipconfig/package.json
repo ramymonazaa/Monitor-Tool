@@ -1,0 +1,31 @@
+{
+  "name": "ipconfig",
+  "description": "Get myip.",
+  "version": "1.0.0",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spikef/ipconfig"
+  },
+  "keywords": [
+    "command",
+    "cli"
+  ],
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "bin": {
+    "ip": "./bin/index.js"
+  },
+  "dependencies": {
+    "cmdu": "^2.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 4.0"
+  },
+  "license": "MIT"
+}

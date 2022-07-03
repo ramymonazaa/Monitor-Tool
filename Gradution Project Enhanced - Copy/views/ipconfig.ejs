@@ -1,0 +1,15 @@
+
+<body>
+
+    <h1>This is the web page !!!</h1>
+    <div id="debug"></div>
+    <script>
+         // JSON-JavaScript Object Notation
+         fetch("./application")
+              .then(response=>response.json())
+              .then(data=>{
+                  console.log(data.sentence)
+                  document.querySelector("#debug").innerText=data.sentence
+             })
+    </script>
+</body>

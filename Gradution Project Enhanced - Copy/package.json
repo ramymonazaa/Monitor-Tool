@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "@netsells/catch-continue": "^1.0.2",
+    "cap": "^0.2.1",
+    "connect-livereload": "^0.6.1",
+    "ejs": "^3.1.6",
+    "express": "^4.18.1",
+    "flickity": "^3.0.0",
+    "html": "^1.0.0",
+    "i": "^0.3.7",
+    "install": "^0.13.0",
+    "ipconfig": "^1.0.0",
+    "is-online": "^10.0.0",
+    "jsdom": "^20.0.0",
+    "json": "^11.0.0",
+    "livereload": "^0.9.3",
+    "local-devices": "^3.2.0",
+    "local-devices-gen-x": "^1.2.0",
+    "net-snmp": "^3.8.2",
+    "network": "^0.6.1",
+    "network-speed": "^2.1.1",
+    "node-arp": "^1.0.6",
+    "nodemon": "^2.0.12",
+    "npm": "^8.13.2",
+    "pidusage": "^3.0.0",
+    "ping": "^0.4.2",
+    "request": "^2.88.2",
+    "satelize": "^0.2.0",
+    "system-health-monitor": "^1.2.1",
+    "systeminformation": "^5.11.22",
+    "webpack-sound-plugin": "^1.0.1",
+    "yargs": "^17.5.1"
+  },
+  "scripts": {
+    "start": "node start.js",
+    "watch": "nodemon --ext js,ejs --ignore public"
+  }
+}
