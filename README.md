@@ -1,7 +1,7 @@
 # Monitor-Tool
 Network monitoring tool to monitor network connected devices and components, and trace packets monitor performance of devices implement SNMP protocol, us Graphical UI.
 How to run our tool?
-	You have to download the project from git hub "https://github.com/ramymonazaa/Monitor-Tool/tree/main”
+	You have to download the project from github "https://github.com/ramymonazaa/Monitor-Tool.git”
  
 By Git clone this URL from your terminal.
 
