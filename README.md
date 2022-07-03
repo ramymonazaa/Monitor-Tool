@@ -1,5 +1,5 @@
-# Monitor-Tool
-Open-Source JavaScript Network Monitoring Tool to monitor network connected devices and components, and trace packets monitor performance of devices implement SNMP protocol, us Graphical UI.
+# Open-Source JavaScript Network Monitoring Tool
+Network Monitoring Tool to monitor network connected devices and components, and trace packets monitor performance of devices implement SNMP protocol, us Graphical UI.
 How to run our tool?
 	You have to download the project from github "https://github.com/ramymonazaa/Monitor-Tool.git”
  
